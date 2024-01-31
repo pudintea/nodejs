@@ -1,11 +1,17 @@
 Install nodeJS LTS
 
+$> node namafile.js
 
+$> npm init
+$> npm init -y
 
+$> npm run namaprojectdiscript
 
+Install ExpressJS
+$> npm install express
 
-
-
+AGar ketika edit autorestart install "nodemon"
+$> npm install nodemon
 
 
 
