@@ -13,7 +13,9 @@ $> npm install express
 AGar ketika edit autorestart install "nodemon"
 $> npm install nodemon
 
+Install koneksi ke mySQL
 
+$> npm -i mysql
 
 
 
