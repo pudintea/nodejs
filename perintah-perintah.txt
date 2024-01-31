@@ -15,7 +15,7 @@ $> npm install nodemon
 
 Install koneksi ke mySQL
 
-$> npm -i mysql
+$> npm i mysql
 
 
 
