@@ -19,4 +19,19 @@ $> npm i mysql
 
 
 
+AGAR BISA BERJALAN DI BACKEND
+$> npm install pm2 -g
+$> pm2 start index.js
+$> pm2 start index.js --env production
+
+$> pm2 start server/index.js --name api-data
+$> pm2 stop api-data
+
+$> pm2 start server/index.js --name uptime-kuma --port=8888 (ganti port )
+
+// Perintah dilinux agar app running setelah restart server
+$> pm2 startup
+
+$> pm2 stop all
+
 ================================ PUDIN.MY.ID ================================================
