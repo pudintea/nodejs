@@ -4,7 +4,7 @@ const db = mysql.createConnection({
     host:"localhost",
     user: "root",
     password: "",
-    database: "db_sidak_ypia"
+    database: "db_pegawai"
 })
 
 // Buat dia jadi modul
