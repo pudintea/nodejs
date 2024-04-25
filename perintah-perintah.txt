@@ -57,4 +57,10 @@ Runtime Edition
                 To go further checkout:
                 http://pm2.io/
 
+MONITORING WEB
+http://pm2.io/
+
+MELEPAS
+$> pm2 unlink
+
 ================================ PUDIN.MY.ID ================================================
