@@ -9,7 +9,7 @@ const db = mysql.createConnection({
 
 db.connect(function(err){
     if (err) throw err;
-    console.log("Datasase Is Connected Sucsessfuly !")
+    console.log("Database Is Connected Sucsessfuly !")
 })
 // Buat dia jadi modul
 module.exports = db
