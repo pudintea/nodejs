@@ -1,0 +1,40 @@
+https://nodejs.org/en/download/prebuilt-installer
+Pilih (LTS)
+
+node -v
+npm -v
+npx -v
+
+npx create-react-app . / titik artinya install disini
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+================================= PUDIN.MY.ID ==================================
