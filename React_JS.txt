@@ -7,6 +7,8 @@ npx -v
 
 npx create-react-app . / titik artinya install disini
 
+npm start / Jalankan React
+
 
 
 
