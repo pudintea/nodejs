@@ -12,7 +12,7 @@ Jalankan React
 $> npm start
 
 Untuk pengelolaan Api
-$> npm -i axios
+$> npm i axios
 
 Install Bootstrap
 $> npm i react-bootstrap bootstrap
