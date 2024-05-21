@@ -1,34 +1,21 @@
 https://nodejs.org/en/download/prebuilt-installer
 Pilih (LTS)
 
-node -v
-npm -v
-npx -v
+$> node -v
+$> npm -v
+$> npx -v
 
-npx create-react-app . / titik artinya install disini
+Install React
+$> npx create-react-app . / titik artinya install disini
 
-npm start / Jalankan React
+Jalankan React
+$> npm start
 
+Untuk pengelolaan Api
+$> npm -i axios
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Install Bootstrap
+$> npm i react-bootstrap bootstrap
 
 
 
