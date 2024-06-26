@@ -1,0 +1,23 @@
+$> npm init
+$> npm init -y
+
+$> npm run namaprojectdiscript
+
+Install ExpressJS
+$> npm install express
+
+AGar ketika edit autorestart install "nodemon"
+$> npm install nodemon
+
+Install koneksi ke mySQL
+
+$> npm i mysql
+
+npm i body-parser
+npm i dotenv
+npm i express
+npm i mysql
+npm i nodemon
+
+
+=========================== PUDIN.MY.ID =======================
