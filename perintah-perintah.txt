@@ -17,8 +17,14 @@ Install koneksi ke mySQL
 
 $> npm i mysql
 
+npm i body-parser
+npm i dotenv
+npm i express
+npm i mysql
+npm i nodemon
 
 
+===============================
 AGAR BISA BERJALAN DI BACKEND
 $> npm install pm2 -g
 $> pm2 start index.js
