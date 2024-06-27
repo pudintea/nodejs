@@ -1,0 +1,15 @@
+DATATABLES EXPRESS.js
+Instalasi :
+npm install -g express-generator
+npx express --view=ejs
+npm install
+npm install mysql
+
+
+
+
+
+
+
+
+  ========================== PUDIN.MY.ID ===============================
