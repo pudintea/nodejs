@@ -46,4 +46,37 @@ app.listen(port, () => {
 http://localhost:3000
 
 
+=========== PM2 =======================
+
+pm2 start index.js --name api-service
+
+Buat atau edit file ecosystem.config.js di direktori root proyek Anda.
+Tambahkan konfigurasi aplikasi beserta versi aplikasi.
+
+module.exports = {
+  apps: [
+    {
+      name: 'api-service',
+      script: './index.js',
+      watch: true,
+      env: {
+        NODE_ENV: 'development'
+      },
+      env_production: {
+        NODE_ENV: 'production'
+      },
+      version: '1.0.0' // Versi aplikasi
+    }
+  ]
+};
+
+pm2 start ecosystem.config.js
+pm2 update
+pm2 list
+pm2 info api-service
+
+pm2 start index.js --name api-service --env production
+pm2 restart api-service --update-env
+
+
 =========================== PUDIN.MY.ID =======================
