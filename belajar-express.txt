@@ -18,6 +18,7 @@ npm i dotenv
 npm i express
 npm i mysql
 npm i nodemon
+npm i cors
 
 - buat 1 buah file dengan nama server-api.js
 - Masukan script dibawah ini :
