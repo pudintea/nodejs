@@ -20,6 +20,11 @@ npm i mysql
 npm i nodemon --save-dev
 npm i cors
 
+npm i express
+npm i mysql
+npm i nodemon --save-dev
+npm i cors
+
 Untuk menginstal Express sementara dan tidak menambahkannya ke daftar dependensi:
 $> npm install express --no-save
 
