@@ -20,6 +20,9 @@ npm i mysql
 npm i nodemon --save-dev
 npm i cors
 
+Untuk menginstal Express sementara dan tidak menambahkannya ke daftar dependensi:
+$> npm install express --no-save
+
 - buat 1 buah file dengan nama server-api.js
 - Masukan script dibawah ini :
 const express = require('express')
