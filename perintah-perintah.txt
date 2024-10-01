@@ -88,5 +88,16 @@ server.listen(port, hostname, () => {
 });
 
 
+NSOLID
+======
+2024-10-01 14:14:24 - To install Node.js, run: apt-get install nodejs -y
+2024-10-01 14:14:24 - You can use N|solid Runtime as a node.js alternative
+2024-10-01 14:14:24 - To install N|solid Runtime, run: apt-get install nsolid -y
+
+PM2 : cocok untuk pengelolaan aplikasi Node.js secara sederhana dan efisien, terutama bagi developer individu atau tim kecil yang ingin menjaga performa dan stabilitas.
+N|Solid : lebih fokus pada enterprise yang membutuhkan solusi keamanan dan performa tingkat lanjut, dengan kemampuan observabilitas dan pengelolaan yang lebih kuat.
+
+
+
 
 ================================ PUDIN.MY.ID ================================================
