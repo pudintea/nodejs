@@ -23,6 +23,9 @@ npm i express
 npm i mysql
 npm i nodemon
 
+=================
+npm i body-parser cookie-parser ejs express express-ejs-layouts express-session multer
+
 
 ===============================
 AGAR BISA BERJALAN DI BACKEND
