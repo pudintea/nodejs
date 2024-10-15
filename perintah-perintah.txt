@@ -24,8 +24,14 @@ npm i mysql
 npm i nodemon
 
 =================
-npm i body-parser cookie-parser ejs express express-ejs-layouts express-session multer
-npm i -D nodemon
+> npm i body-parser cookie-parser ejs express express-ejs-layouts express-session multer
+> npm i -D nodemon
+
+> npm i express ejs body-parser express-ejs-layouts multer path
+> npm i express ejs body-parser express-ejs-layouts multer path bcrypt cookie-parser dotenv express-flash express-session validator
+
+
+
 
 
 ===============================
