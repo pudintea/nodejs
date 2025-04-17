@@ -10,3 +10,5 @@ nvm use 18.17.1
 
 node -v
 npm -v
+
+============ pudin.my.id =========
