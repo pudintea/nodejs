@@ -1,0 +1,46 @@
+// GET DATA
+
+const get = (tbNama, idTb, namaIdTb) => {
+    const allowedTables = ['users', 'produk']; // whitelist
+    const allowedFields = ['users_id', 'produk_id'];
+
+    if (!allowedTables.includes(tbNama) || !allowedFields.includes(namaIdTb)) {
+        throw new Error('Akses tidak diizinkan');
+    }
+
+    const sqlQuery = `SELECT * FROM \`${tbNama}\` WHERE \`${namaIdTb}\` = ?`;
+    return dbPool.execute(sqlQuery, [idTb]);
+}
+
+// GET ALL DATA
+
+const allowedTables = ['users', 'produk', 'kategori']; // daftar yang diizinkan
+const getAll = (tbNama) => {
+    if (!allowedTables.includes(tbNama)) {
+        throw new Error('Tabel tidak diizinkan');
+    }
+
+    const sqlQuery = `SELECT * FROM \`${tbNama}\``; // pakai backtick biar aman dari nama reserved
+    return dbPool.execute(sqlQuery);
+}
+
+// SAVE DATA
+
+const save = (inputData, tbNama) => {
+    const fields = Object.keys(inputData).join(', ');
+    const placeholders = Object.keys(inputData).map(() => '?').join(', ');
+    const sqlQuery = `INSERT INTO ${tbNama} (${fields}) VALUES (${placeholders})`;
+    const values = Object.values(inputData);
+
+    return dbPool.execute(sqlQuery, values);
+}
+
+
+
+
+
+
+
+
+
+===================== PUDIN.MY.ID ==========================
