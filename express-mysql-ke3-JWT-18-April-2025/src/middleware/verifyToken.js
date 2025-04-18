@@ -12,6 +12,11 @@ const verifyToken = (req, res, next) => {
     req.user = decoded; // simpan data user dari token
     next();
   } catch (err) {
+    // Cek jika error karena token expired
+    if (err.name === 'TokenExpiredError') {
+      return res.status(403).json({ message: 'Token sudah kedaluwarsa' });
+    }
+    // Jika token rusak atau tidak valid
     return res.status(403).json({ message: 'Token tidak valid' });
   }
 };
