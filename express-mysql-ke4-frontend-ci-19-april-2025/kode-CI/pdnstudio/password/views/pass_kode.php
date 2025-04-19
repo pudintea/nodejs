@@ -1,0 +1,1 @@
+<?php defined('__NAJZMI_PUDINTEA__') OR exit('No direct script access allowed'); ?>
