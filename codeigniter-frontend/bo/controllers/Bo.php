@@ -1,17 +1,11 @@
 <?php defined('__NAJZMI_PUDINTEA__') OR exit('No direct script access allowed');
 
-use \Firebase\JWT\JWT;
-use \Firebase\JWT\Key;
-
 class Bo extends CI_Controller {
 	function __construct()
 	{
 		$this->data = [];
 		parent::__construct();
 		date_default_timezone_set('Asia/Jakarta');
-		// Load JWT
-        require_once APPPATH . 'third_party/JWT/JWT.php';
-        require_once APPPATH . 'third_party/JWT/Key.php';
 	}
 
 	public function title()		{return 'Login Frontend';}
