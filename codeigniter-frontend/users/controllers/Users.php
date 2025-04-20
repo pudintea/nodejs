@@ -28,24 +28,51 @@ class Users extends CI_Controller {
 		$draw   = $this->input->post('draw');
 		$start  = $this->input->post('start');
 		$length = $this->input->post('length');
-		$search = $this->input->post('search')['value'];
+		$search = $this->input->post('search')['value'] ?? '';
+		$order   = $this->input->post('order');
+		$columns = $this->input->post('columns');
 
-		// Bungkus parameter untuk dikirim ke model
 		$params = [
 			'draw' => $draw,
 			'start' => $start,
 			'length' => $length,
 			'search' => $search,
+			'order' => $order,
+			'columns' => $columns
 		];
 
-		// Panggil model yang pakai Guzzle
+		// Ambil data dari model (Guzzle ke Express backend)
 		$response = $this->M_pdn->getDatatbles($params);
 
-		// Langsung teruskan response JSON dari Express backend
-		header('Content-Type: application/json');
-		echo json_encode($response);
-	}
+		// Siapkan hasil akhir untuk DataTables
+		$data_rows = [];
 
+		foreach ($response->data as $item) {
+			$row = [];
+			$row[] = $item->no;
+			$row[] = $item->nama;
+			$row[] = $item->email;
+			$row[] = $item->level;
+
+			// Action tombol Edit dan Hapus
+			$row[] = '
+				<a href="' . base_url('users/edit/' . $item->id) . '" class="btn btn-circle btn-sm btn-primary" title="Edit"><i class="fas fa-pencil-alt"></i></a>
+				<a href="' . base_url('users/delete/' . $item->id) . '" class="btn btn-circle btn-sm btn-danger" title="Hapus"><i class="fas fa-trash-alt"></i></a>
+			';
+
+			$data_rows[] = $row;
+		}
+
+		$output = [
+			'draw' => intval($response->draw),
+			'recordsTotal' => $response->recordsTotal,
+			'recordsFiltered' => $response->recordsFiltered,
+			'data' => $data_rows
+		];
+
+		header('Content-Type: application/json');
+		echo json_encode($output);
+	}
 	function tambah(){
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim');
 		$this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
