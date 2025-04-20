@@ -4,8 +4,8 @@ const router = express.Router();
 const pool = require('../config/confDbMysql');
 
 router.get('/', async (req, res) => {
-    res.json({
-        message: 'success'
+    res.status(404).json({
+        message: 'Not Found!'
     })
 })
 
@@ -14,13 +14,27 @@ router.post('/', async (req, res) => {
 	const start = parseInt(req.body.start) || 0;
 	const length = parseInt(req.body.length) || 10;
 	const search = req.body.search || '';
+	const order = req.body.order?.[0] || {};
+	const columns = req.body.columns || [];
+
+	// Ambil kolom dan arah order dari request
+	const orderColumnIndex = parseInt(order.column || 1);
+	const orderDir = order.dir === 'desc' ? 'DESC' : 'ASC';
+	const requestedColumn = columns?.[orderColumnIndex]?.data || 'nama';
+
+	// Mapping frontend alias ke kolom database
+	const columnMap = {
+		nama: 'users_nama',
+		email: 'users_email',
+		level: 'users_level'
+	};
+
+	const safeOrderColumn = columnMap[requestedColumn] || 'users_nama';
 
 	try {
-		// Hitung total semua user
 		const [totalResult] = await pool.query("SELECT COUNT(*) as total FROM users");
 		const recordsTotal = totalResult[0].total;
 
-		// Query untuk filter (jika ada pencarian)
 		let filteredQuery = "SELECT * FROM users";
 		let params = [];
 
@@ -29,26 +43,24 @@ router.post('/', async (req, res) => {
 			params.push(`%${search}%`, `%${search}%`);
 		}
 
+		// Hitung filtered count
 		const [filteredResult] = await pool.query(filteredQuery, params);
 		const recordsFiltered = filteredResult.length;
 
-		// Ambil data dengan limit dan offset
-		filteredQuery += " LIMIT ?, ?";
+		// Tambahkan ORDER BY dan LIMIT
+		filteredQuery += ` ORDER BY ${safeOrderColumn} ${orderDir} LIMIT ?, ?`;
 		params.push(start, length);
 
 		const [users] = await pool.query(filteredQuery, params);
 
-		// Format data untuk DataTables
-		let no = start + 1;
-		const data = users.map(user => [
-			no++,
-			user.users_nama,
-			user.users_email,
-			user.users_level,
-			''
-		]);
+		const data = users.map((user, index) => ({
+			id: user.id_users,
+			no: start + index + 1,
+			nama: user.users_nama,
+			email: user.users_email,
+			level: user.users_level
+		}));
 
-		// Kirim response ke DataTables
 		res.json({
 			draw,
 			recordsTotal,
