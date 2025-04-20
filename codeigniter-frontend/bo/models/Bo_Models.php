@@ -1,8 +1,8 @@
-<?php  if ( ! defined('__NAJZMI_PUDINTEA__')) exit('No direct script access allowed');
+<?php  if ( ! defined('__PUDINTEA__')) exit('No direct script access allowed');
 /**
 *
 * Author:  Pudin S I
-* 		   najzmitea@gmail.com
+* 	pudin.alazhar@gmail.com
 *
 */
 
