@@ -101,7 +101,7 @@ class Users extends CI_Controller {
 		}else{
 			$pdn_data['nama'] 		= htmlspecialchars($this->input->post('nama', true));
 			$pdn_data['email'] 		= htmlspecialchars($this->input->post('email', true));
-			$pdn_data['password'] 	= password_hash($this->input->post('password1'), PASSWORD_DEFAULT);
+			$pdn_data['password'] 	= $this->input->post('password1');
 			$pdn_data['level'] 		= $this->input->post('level', true);
 
 			// Panggil model yang pakai Guzzle
