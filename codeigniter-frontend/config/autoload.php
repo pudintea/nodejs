@@ -1,5 +1,13 @@
 <?php
-defined('__NAJZMI_PUDINTEA__') OR exit('No direct script access allowed');
+defined('__PUDINTEA__') OR exit('No direct script access allowed');
+/*
+|--------------------------------------------------------------------------
+| Konfigurasi JWT
+|--------------------------------------------------------------------------
+*/
+$config['pdn_api_url'] = 'localhost:4000';
+$config['jwt_cookie_nama'] = 'pdn_cookie_applogin';
+$config['jwt_key'] = 'XXXXXXXXX-XXXXXXXXX-XXXXXXXXX';
 
 /*
 | -------------------------------------------------------------------
