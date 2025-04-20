@@ -15,7 +15,7 @@ class Bo_Models extends CI_Model
 	function __construct(){
 		parent::__construct();
 		    date_default_timezone_set('Asia/Jakarta');
-            $this->_api_url = 'localhost:4000';
+            $this->_api_url = $this->config->item('pdn_api_url');
 	}
 	
 	/**
