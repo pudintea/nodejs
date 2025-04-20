@@ -11,7 +11,7 @@ class Bo extends CI_Controller {
 	public function title()		{return 'Login Frontend';}
 	public function author()	{return 'Pudin S I';}
 	public function MainModel()	{return 'Bo_Models';}
-	public function contact()	{return 'najzmitea@gmail.com';}
+	public function contact()	{return 'pudin.alazhar@gmail.com';}
 	public function ClassNama()	{return 'bo';}
 	
 	public function index()
