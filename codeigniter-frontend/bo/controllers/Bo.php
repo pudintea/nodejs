@@ -1,4 +1,4 @@
-<?php defined('__NAJZMI_PUDINTEA__') OR exit('No direct script access allowed');
+<?php defined('__PUDINTEA__') OR exit('No direct script access allowed');
 
 class Bo extends CI_Controller {
 	function __construct()
